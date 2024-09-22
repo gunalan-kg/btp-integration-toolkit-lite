@@ -5,15 +5,15 @@ const logger = require("../utils/logger");
 const { EventLogs } = cds.entities('com.sap.pgp.dev.ItkApp');
 
 async function doCreateRealmTemplates(req){
-  
+  console.log("Inside doCreateRealmMapping");
   debugger;
   const entities = req.data.entities;
   const srv = cds.transaction(req);
-
+  console.trace();
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.create('RealmMapping',entity)
+   return await srv.create('com.sap.pgp.dev.ItkApp.RealmMapping',entity)
   }));
-   
+  console.log("result value",results);
    logger.info(`ITK: Realm Mapping  ${results.length} entities created successfully.`);
  
   
@@ -26,7 +26,7 @@ async function doCreateFTPTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.create('FTPServer',entity)
+   return await srv.create('com.sap.pgp.dev.ItkApp.FTPServer',entity)
   }));
    
   logger.info(`ITK: FTP Server  ${results.length} entities created successfully.`);
@@ -40,7 +40,7 @@ async function doCreateImportTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.create('ImportEvents',entity)
+   return await srv.create('com.sap.pgp.dev.ItkApp.ImportEvents',entity)
   }));
    
   logger.info(`ITK: Import Events  ${results.length} entities created successfully.`);
@@ -54,7 +54,7 @@ async function doCreateSpendVizTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.create('SpendVizEvents',entity)
+   return await srv.create('com.sap.pgp.dev.ItkApp.SpendVizEvents',entity)
   }));
    
   logger.info(`ITK: Spend Viz  ${results.length} entities created successfully.`);
@@ -68,7 +68,7 @@ async function doCreateMiscTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.create('MiscDetails',entity)
+   return await srv.create('com.sap.pgp.dev.ItkApp.MiscDetails',entity)
   }));
    
   logger.info(`ITK: Misc SMTP Details  ${results.length} entities created successfully.`);
@@ -82,7 +82,7 @@ async function doCreateSSTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.create('SharedSecret',entity)
+   return await srv.create('com.sap.pgp.dev.ItkApp.SharedSecret',entity)
   }));
    
   logger.info(`ITK: Shared Secret  ${results.length} entities created successfully.`);
@@ -97,7 +97,7 @@ async function doCreateExportTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.create('ExportEvents',entity)
+   return await srv.create('com.sap.pgp.dev.ItkApp.ExportEvents',entity)
   }));
    
   logger.info(`ITK: Export Events ${results.length} entities created successfully.`);
@@ -112,7 +112,7 @@ async function doDeleteRealmTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.delete('RealmMapping',entity)
+   return await srv.delete('com.sap.pgp.dev.ItkApp.RealmMapping',entity)
   }));
    
    logger.info(`ITK: Realm Mapping  ${results.length} entities deleted successfully.`);
@@ -127,7 +127,7 @@ async function doDeleteFTPTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.delete('FTPServer',entity)
+   return await srv.delete('com.sap.pgp.dev.ItkApp.FTPServer',entity)
   }));
    
   logger.info(`ITK: FTP Server  ${results.length} entities deleted successfully.`);
@@ -141,7 +141,7 @@ async function doDeleteImportTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.delete('ImportEvents',entity)
+   return await srv.delete('com.sap.pgp.dev.ItkApp.ImportEvents',entity)
   }));
    
   logger.info(`ITK: Import Events  ${results.length} entities deleted successfully.`);
@@ -155,7 +155,7 @@ async function doDeleteSpendVizTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.delete('SpendVizEvents',entity)
+   return await srv.delete('com.sap.pgp.dev.ItkApp.SpendVizEvents',entity)
   }));
    
   logger.info(`ITK: Spend Viz  ${results.length} entities deleted successfully.`);
@@ -169,7 +169,7 @@ async function doDeleteMiscTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.delete('MiscDetails',entity)
+   return await srv.delete('com.sap.pgp.dev.ItkApp.MiscDetails',entity)
   }));
    
   logger.info(`ITK: Misc SMTP Details  ${results.length} entities deleted successfully.`);
@@ -183,7 +183,7 @@ async function doDeleteSSTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.delete('SharedSecret',entity)
+   return await srv.delete('com.sap.pgp.dev.ItkApp.SharedSecret',entity)
   }));
    
   logger.info(`ITK: Shared Secret  ${results.length} entities deleted successfully.`);
@@ -198,7 +198,7 @@ async function doDeleteExportTemplates(req){
   const srv = cds.transaction(req);
 
   const results = await Promise.all(entities.map(async (entity) => {
-   return await srv.delete('ExportEvents',entity)
+   return await srv.delete('com.sap.pgp.dev.ItkApp.ExportEvents',entity)
   }));
    
   logger.info(`ITK: Export Events ${results.length} entities deleted successfully.`);
@@ -234,7 +234,7 @@ async function doDeleteTransactionData(req){
   }
 
   const results = await Promise.all(OldTransactions.map(async (entity) => {
-    return await srv.delete('EventLogs',entity)
+    return await srv.delete('com.sap.pgp.dev.ItkApp.EventLogs',entity)
    }));
 
   logger.info(`ITK: Transaction Data  ${results.length} entries deleted successfully.`);

@@ -18,7 +18,7 @@
 			  "uri": "/backend/v2/itk/",
 			  "type": "OData",
 			  "settings": {
-				"odataVersion": "2.0"
+				"odataVersion": "4.0"
 			  }
 			}
 		  }

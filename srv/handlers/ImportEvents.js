@@ -230,7 +230,7 @@ async function zipit(fileArray) {
    setTimeout(() => {
     resolve('Import Event: Resolve Timeout Exceeded');
 
-   }, 10000);
+   }, 30000);
 
   }
   catch(error){ reject(error)}

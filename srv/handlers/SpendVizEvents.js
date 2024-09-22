@@ -207,7 +207,7 @@ function zipit(fileArray) {
    setTimeout(() => {
     resolve('Spend Viz: Zipping Completed');
 
-   }, 10000);
+   }, 30000);
   });
 }
 async function ImportandMove(Realm,Operation,Process,zipBuffer,fileArray,ImportDir,filename,AuthUser,sourceSystem,fileexist,EventName)

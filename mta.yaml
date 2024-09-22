@@ -56,12 +56,12 @@ modules:
       - clientid: "*"
       identityzone: "*"
       JOB_SCHED_APP_URL: '${org}-${space}-ItkApp.${default-domain}'
-      CRED_NAMESPACE: "SolarchitectureCF"
+      CRED_NAMESPACE: "nonprod-namespace"
       EMAIL_TEMPLATE: "./srv/utils/email-body.json"
-      ITK_CRED_NAME: "ITKPassword"
+      ITK_CRED_NAME: "ITK-TransamericaUS-T"
       SMTP_CRED_NAME: "SMTPPassword"
       SFTP_CRED_PKNAME: "SFTPPrivateKey"
-      SFTP_CRED_PASSNAME: "FTPPassword"
+      SFTP_CRED_PASSNAME: "Aegon-SFTP"
    provides:
     - name: backend      # required by consumers of CAP services (e.g. approuter)
       properties:
@@ -84,28 +84,27 @@ modules:
   #  routes:
   #    - route: backend
   #      destination: ItkApp_destination
- # --------------------- DB MODULE ------------------------
+# --------------------- DB MODULE ------------------------
  - name: ItkApp-db
  # ------------------------------------------------------------
    type: custom
-   path: gen/db
+   path: gen/pg
    parameters:
-     buildpacks: [https://github.com/cloudfoundry/apt-buildpack#v0.3.0, nodejs_buildpack] 
-     no-route: true
+     disk-quota: 1GB
+     memory: 2GB
      no-start: true
-     disk-quota: 2GB
-     memory: 512MB
+     no-route: true
      tasks:
-     - name: deploy_to_postgresql
-       command: chmod 755 deploy.sh && ./deploy.sh
-       disk-quota: 2GB
-       memory: 512MB      
+       - name: deploy-to-postgresql
+         command: npm start
    build-parameters:
      ignore: ["node_modules/"]
    requires:
      - name: ItkApp-pgdatabase
-
+ 
 resources:
+ # services extracted from CAP configuration
+ # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
 # ------------------------------------------------------------
  - name: ItkApp-pgdatabase
 # ------------------------------------------------------------
@@ -152,7 +151,7 @@ resources:
 # ------------------------------------------------------------
    type: org.cloudfoundry.existing-service
    parameters:
-     service-name: solarchitecture-cf-credstore
+     service-name: nonprod-credstore
 
 # ------------------------------------------------------------
  - name: ITKApp-jobscheduler
