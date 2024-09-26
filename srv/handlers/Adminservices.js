@@ -9,7 +9,6 @@ async function doCreateRealmTemplates(req){
   debugger;
   const entities = req.data.entities;
   const srv = cds.transaction(req);
-  console.trace();
   const results = await Promise.all(entities.map(async (entity) => {
    return await srv.create('com.sap.pgp.dev.ItkApp.RealmMapping',entity)
   }));

@@ -1,6 +1,6 @@
 {
   "welcomeFile": "/ItkApp/index.html",
-  "authenticationMethod": "none",
+  "authenticationMethod": "route",
   "logout": {
     "logoutEndpoint": "/do/logout"
   },

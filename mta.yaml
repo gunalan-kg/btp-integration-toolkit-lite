@@ -151,7 +151,7 @@ resources:
 # ------------------------------------------------------------
    type: org.cloudfoundry.existing-service
    parameters:
-     service-name: nonprod-credstore
+     service-name: solarchitecture-cf-credstore
 
 # ------------------------------------------------------------
  - name: ITKApp-jobscheduler
