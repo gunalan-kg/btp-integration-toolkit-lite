@@ -8,5 +8,3 @@ csv/
 package-lock.json
 SqLite.sql
 itksqlite.db
-default-env.json
-docker-compose.yml

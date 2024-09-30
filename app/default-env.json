@@ -1,0 +1,235 @@
+{
+	"destinations" : [
+		{
+		  "name": "backend",
+		  "url": "http://localhost:4004",
+		  "forwardAuthToken": true
+		}
+	  ]	,
+	  "VCAP_SERVICES" : {
+
+	"jobscheduler": [
+			{
+				"label": "jobscheduler",
+				"provider": null,
+				"plan": "standard",
+				"name": "ITKApp-jobscheduler",
+				"tags": [
+					"jobscheduler"
+				],
+				"instance_guid": "2597283a-63f8-48c9-bfe5-c145beefbf61",
+				"instance_name": "ITKApp-jobscheduler",
+				"binding_guid": "0423dfe2-e06a-4c35-99e6-f90d6f3fa11b",
+				"binding_name": null,
+				"credentials": {
+					"url": "https://jobscheduler-rest.cfapps.sap.hana.ondemand.com",
+					"uaa": {
+						"tenantmode": "dedicated",
+						"sburl": "https://internal-xsuaa.authentication.sap.hana.ondemand.com",
+						"subaccountid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1",
+						"credential-type": "binding-secret",
+						"clientid": "sb-2597283a-63f8-48c9-bfe5-c145beefbf61!b6150|sap-jobscheduler!b21",
+						"xsappname": "2597283a-63f8-48c9-bfe5-c145beefbf61!b6150|sap-jobscheduler!b21",
+						"clientsecret": "0423dfe2-e06a-4c35-99e6-f90d6f3fa11b$wB63uFrjkmxLm9c_skTFX2i8kr8B1QJYo1fLqI404Lc=",
+						"serviceInstanceId": "2597283a-63f8-48c9-bfe5-c145beefbf61",
+						"url": "https://solarchitecture.authentication.sap.hana.ondemand.com",
+						"uaadomain": "authentication.sap.hana.ondemand.com",
+						"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvC1bXBWVYTG44H9TfAOD\nBRwEkhFZSrCGjEvVf+a15TALFx2X+yqQ8ikf556Cez8x+sgn2zDxK5PK/3PoPLfS\nBSC0of0lnsXKdAkjY0TQy7WBC6cdZd9lM/G6+f46CTGmIV4dLOXKK3DVj9SOediz\nEQ/yLgzkk+P8p3WQaSpDxtJZt3T86KZnVEVghkR0Z0ZTikpCpgW5l5tN5/q1FhUJ\nCOKO+n92UamSKDvW3qBEVtxZyWs87WOo9Z+5ArSI6JV69kZo1rY/uTWz6dw3+I0h\nUSW0B0Js2NrmN1VzHwWvWnFinsheNoJL5Lt2yks11lCNzMqTlpr+OMDMqC6+twxj\ntwIDAQAB\n-----END PUBLIC KEY-----",
+						"apiurl": "https://api.authentication.sap.hana.ondemand.com",
+						"identityzone": "solarchitecture",
+						"identityzoneid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1",
+						"tenantid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1",
+						"zoneid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1"
+					}
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"connectivity": [
+			{
+				"label": "connectivity",
+				"provider": null,
+				"plan": "lite",
+				"name": "ItkApp_connectivity",
+				"tags": [
+					"connectivity",
+					"conn",
+					"connsvc"
+				],
+				"instance_guid": "d707210b-42a9-4670-8d67-742102f00a6f",
+				"instance_name": "ItkApp_connectivity",
+				"binding_guid": "8f0c50b4-41aa-4088-b573-d208bae2cd65",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"clientid": "sb-cloned707210b42a946708d67742102f00a6f!b6150|connectivity!b137",
+					"token_service_domain": "authentication.sap.hana.ondemand.com",
+					"credential-type": "binding-secret",
+					"token_service_url": "https://solarchitecture.authentication.sap.hana.ondemand.com",
+					"xsappname": "cloned707210b42a946708d67742102f00a6f!b6150|connectivity!b137",
+					"onpremise_proxy_ldap_port": "20001",
+					"onpremise_socks5_proxy_port": "20004",
+					"clientsecret": "8f0c50b4-41aa-4088-b573-d208bae2cd65$Ki-a_DllIqjIh_uhlwqdQGTZdmmnbWEhpa2IyYX334s=",
+					"onpremise_proxy_http_port": "20003",
+					"url": "https://solarchitecture.authentication.sap.hana.ondemand.com",
+					"onpremise_proxy_host": "connectivityproxy.internal.cf.sap.hana.ondemand.com",
+					"uaadomain": "authentication.sap.hana.ondemand.com",
+					"onpremise_proxy_port": "20003",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvC1bXBWVYTG44H9TfAOD\nBRwEkhFZSrCGjEvVf+a15TALFx2X+yqQ8ikf556Cez8x+sgn2zDxK5PK/3PoPLfS\nBSC0of0lnsXKdAkjY0TQy7WBC6cdZd9lM/G6+f46CTGmIV4dLOXKK3DVj9SOediz\nEQ/yLgzkk+P8p3WQaSpDxtJZt3T86KZnVEVghkR0Z0ZTikpCpgW5l5tN5/q1FhUJ\nCOKO+n92UamSKDvW3qBEVtxZyWs87WOo9Z+5ArSI6JV69kZo1rY/uTWz6dw3+I0h\nUSW0B0Js2NrmN1VzHwWvWnFinsheNoJL5Lt2yks11lCNzMqTlpr+OMDMqC6+twxj\ntwIDAQAB\n-----END PUBLIC KEY-----",
+					"identityzone": "solarchitecture",
+					"tenantid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1",
+					"onpremise_proxy_rfc_port": "20001"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"credstore": [
+			{
+				"label": "credstore",
+				"provider": null,
+				"plan": "standard",
+				"name": "solarchitecture-cf-credstore",
+				"tags": [
+					"credstore",
+					"securestore",
+					"keystore",
+					"credentials"
+				],
+				"instance_guid": "26cffbcd-6f52-4598-85ec-786aa7633599",
+				"instance_name": "solarchitecture-cf-credstore",
+				"binding_guid": "a4dcf589-a7bc-46a2-90ab-44fbeb3d58fb",
+				"binding_name": null,
+				"credentials": {
+					"password": "qxNix9cW1FSLCzlODGqVmelPH0aNIa72khe22dcmUFiTukkgyOrbfvbUYOiGlMdy.0.lY5lQbcKfYtp/iz2nWhUDknXB7sMAuUrxEWVsvE0SfU=",
+					"expires_at": "2024-11-25T20:41:26.5Z",
+					"encryption": {
+						"client_private_key": "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",
+						"server_public_key": "MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAoEwmX5dWWP4y+tBuL5tYirFIWrzbwwUxZY0qPdhNN7fvJrZpO524Ro1iDt1BJOkuGgvuko4Hrgul1ouJTFPCXYsIL044gsCpmmawV5RqcNab4ZKJnvKq0wBfvftSNCpWgkozmcLNT5AECmP9rvC5pbMcaql4zgTZofsAP53jTkpUg3PYIh1Vi0+4diRcEhqnWbwjpgQyKKTx4l8Zcxe62aoKB0LngmIvfvJxZGg1RZRUU8zsu8mpuRgW3gDbsUzJcwYnheqBKQcoD9348NO/gOAhH7h9RnEAe+WZQncxpurOp8MRkPdrD4QfXeN98lZvIusf59CzQSOyX8M/YycUtXfSjQB1ytf4Cc2tk29eyjFcZ6Nxiu2W9bTD/xDc8d7SDY89Fjfxnf9AOMRgGWm3bMcscn1HkcvXRIH7SEJXnq51fdqfTSHpzMSvFQucG1HKcNn5vsQ9/7rqSpKrbSlvKClEhjnNfZ8RW3/7g0tzKqDMgFCcGOZpuN87sGlefsj1AgMBAAE="
+					},
+					"parameters": {
+						"authorization": {
+							"default_permissions": [
+								"create",
+								"decrypt",
+								"delete",
+								"encrypt",
+								"info",
+								"list",
+								"namespaces",
+								"read",
+								"update"
+							]
+						},
+						"encryption": {
+							"payload": "enabled",
+							"key": {
+								"size": 3072
+							}
+						},
+						"authentication": {
+							"type": "basic"
+						},
+						"access_policy": {
+							"creds_api": "public",
+							"token_api": "public",
+							"kms_api": "public",
+							"encryption_api": "public"
+						}
+					},
+					"url": "https://credstore.cfapps.sap.hana.ondemand.com/api/v1/credentials",
+					"username": "a4dcf589-a7bc-46a2-90ab-44fbeb3d58fb.0.nwmSoN4aJkCS91sGyRQhXGw0L8tnYRBBZLR31DDbxoQ="
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"application-logs": [
+			{
+				"label": "application-logs",
+				"provider": null,
+				"plan": "lite",
+				"name": "ITKApp-log",
+				"tags": [],
+				"instance_guid": "ae1df72e-d22f-46a2-81b3-26ba3bce895b",
+				"instance_name": "ITKApp-log",
+				"binding_guid": "e488a705-127c-4447-8738-63f017e23da0",
+				"binding_name": null,
+				"credentials": {},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"xsuaa": [
+			{
+				"label": "xsuaa",
+				"provider": null,
+				"plan": "application",
+				"name": "ItkApp_xsuaa",
+				"tags": [
+					"xsuaa"
+				],
+				"instance_guid": "3ed8cf49-39dc-42e9-a793-224b7ea72493",
+				"instance_name": "ItkApp_xsuaa",
+				"binding_guid": "c388675c-2178-4ca2-a12e-a39e01947f6e",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"sburl": "https://internal-xsuaa.authentication.sap.hana.ondemand.com",
+					"subaccountid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1",
+					"credential-type": "instance-secret",
+					"clientid": "sb-ItkApp-prod!t6150",
+					"xsappname": "ItkApp-prod!t6150",
+					"clientsecret": "UOPwg1czcl5srHe+Hz4ZWrLVt9o=",
+					"serviceInstanceId": "3ed8cf49-39dc-42e9-a793-224b7ea72493",
+					"url": "https://solarchitecture.authentication.sap.hana.ondemand.com",
+					"uaadomain": "authentication.sap.hana.ondemand.com",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvC1bXBWVYTG44H9TfAOD\nBRwEkhFZSrCGjEvVf+a15TALFx2X+yqQ8ikf556Cez8x+sgn2zDxK5PK/3PoPLfS\nBSC0of0lnsXKdAkjY0TQy7WBC6cdZd9lM/G6+f46CTGmIV4dLOXKK3DVj9SOediz\nEQ/yLgzkk+P8p3WQaSpDxtJZt3T86KZnVEVghkR0Z0ZTikpCpgW5l5tN5/q1FhUJ\nCOKO+n92UamSKDvW3qBEVtxZyWs87WOo9Z+5ArSI6JV69kZo1rY/uTWz6dw3+I0h\nUSW0B0Js2NrmN1VzHwWvWnFinsheNoJL5Lt2yks11lCNzMqTlpr+OMDMqC6+twxj\ntwIDAQAB\n-----END PUBLIC KEY-----",
+					"apiurl": "https://api.authentication.sap.hana.ondemand.com",
+					"identityzone": "solarchitecture",
+					"identityzoneid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1",
+					"tenantid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1",
+					"zoneid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"destination": [
+			{
+				"label": "destination",
+				"provider": null,
+				"plan": "lite",
+				"name": "ItkApp_destination",
+				"tags": [
+					"destination",
+					"conn",
+					"connsvc"
+				],
+				"instance_guid": "ddfdec93-fee0-4722-81a3-036c8abe80ac",
+				"instance_name": "ItkApp_destination",
+				"binding_guid": "1701e32b-6661-4f24-8133-29ee79695d10",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"clientid": "sb-cloneddfdec93fee0472281a3036c8abe80ac!b6150|destination-xsappname!b433",
+					"credential-type": "binding-secret",
+					"xsappname": "cloneddfdec93fee0472281a3036c8abe80ac!b6150|destination-xsappname!b433",
+					"clientsecret": "1701e32b-6661-4f24-8133-29ee79695d10$Mcat6pctbvuyBbPXxt9JDw1jOBhTMY4YaJLTOcS3v6A=",
+					"uri": "https://destination-configuration.cfapps.sap.hana.ondemand.com",
+					"url": "https://solarchitecture.authentication.sap.hana.ondemand.com",
+					"uaadomain": "authentication.sap.hana.ondemand.com",
+					"instanceid": "ddfdec93-fee0-4722-81a3-036c8abe80ac",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvC1bXBWVYTG44H9TfAOD\nBRwEkhFZSrCGjEvVf+a15TALFx2X+yqQ8ikf556Cez8x+sgn2zDxK5PK/3PoPLfS\nBSC0of0lnsXKdAkjY0TQy7WBC6cdZd9lM/G6+f46CTGmIV4dLOXKK3DVj9SOediz\nEQ/yLgzkk+P8p3WQaSpDxtJZt3T86KZnVEVghkR0Z0ZTikpCpgW5l5tN5/q1FhUJ\nCOKO+n92UamSKDvW3qBEVtxZyWs87WOo9Z+5ArSI6JV69kZo1rY/uTWz6dw3+I0h\nUSW0B0Js2NrmN1VzHwWvWnFinsheNoJL5Lt2yks11lCNzMqTlpr+OMDMqC6+twxj\ntwIDAQAB\n-----END PUBLIC KEY-----",
+					"identityzone": "solarchitecture",
+					"tenantid": "f4dcb754-304f-4826-9f2b-7c8c2ceabbe1"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		]
+	
+
+		}
+}
